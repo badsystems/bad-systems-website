@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Get In Touch — BAD Systems</title>
+<meta name="description" content="Start a conversation with BAD Systems. Consulting and mentorship for service-based entrepreneurs and women-led teams.">
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,600;0,700;0,900;1,700&family=Lora:ital,wght@0,400;1,400;1,600&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --black:    #0D0D0D;
+  --charcoal: #1A1A1A;
+  --card-bg:  #141414;
+  --lime:     #C8E000;
+  --pink:     #E8157A;
+  --white:    #F5F5F0;
+  --muted:    #888880;
+  --border:   rgba(255,255,255,0.07);
+}
+html { scroll-behavior: smooth; }
+body { background: var(--black); color: var(--white); font-family: 'Montserrat', sans-serif; overflow-x: hidden; -webkit-font-smoothing: antialiased; }
+a { text-decoration: none; color: inherit; }
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: var(--black); }
+::-webkit-scrollbar-thumb { background: var(--pink); border-radius: 2px; }
+
+/* ── NAV ── */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 200;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 1.2rem 4rem;
+  background: rgba(13,13,13,0.94);
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--border);
+  transition: padding 0.3s ease;
+}
+.nav-logo { display: flex; align-items: center; gap: 0.55rem; font-weight: 900; font-size: 1.3rem; letter-spacing: 0.04em; }
+.logo-bolt { width: 26px; height: 26px; background: var(--lime); flex-shrink: 0; clip-path: polygon(55% 0%, 100% 0%, 45% 52%, 85% 52%, 5% 100%, 20% 52%, -15% 52%); }
+.logo-bad { color: var(--lime); }
+.logo-sys { color: var(--pink); font-style: italic; }
+.nav-links { display: flex; align-items: center; gap: 2rem; list-style: none; }
+.nav-links a { font-size: 0.77rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); transition: color 0.2s; }
+.nav-links a:hover { color: var(--lime); }
+.nav-links a.active { color: var(--lime); }
+.nav-btn { background: var(--pink) !important; color: var(--white) !important; padding: 0.5rem 1.3rem; border-radius: 999px; font-weight: 700 !important; }
+
+.hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; }
+.hamburger span { width: 24px; height: 2px; background: var(--white); border-radius: 2px; }
+
+.mobile-nav {
+  display: none; position: fixed; inset: 0;
+  background: var(--black); z-index: 300;
+  flex-direction: column; align-items: center; justify-content: center; gap: 2.5rem;
+}
+.mobile-nav.open { display: flex; }
+.mobile-nav .close-btn { position: absolute; top: 1.5rem; right: 2rem; font-size: 2rem; cursor: pointer; color: var(--muted); }
+.mobile-nav a { font-size: 1.7rem; font-weight: 900; text-transform: uppercase; transition: color 0.2s; }
+.mobile-nav a:hover { color: var(--lime); }
+
+/* ── HERO ── */
+.contact-hero {
+  padding: 11rem 4rem 5rem;
+  position: relative; overflow: hidden;
+  border-bottom: 1px solid var(--border);
+  text-align: center;
+}
+.hero-grid {
+  position: absolute; inset: 0;
+  background-image: linear-gradient(rgba(200,224,0,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(200,224,0,0.04) 1px, transparent 1px);
+  background-size: 48px 48px;
+  animation: gridMove 25s linear infinite;
+  pointer-events: none;
+}
+@keyframes gridMove { to { background-position: 48px 48px; } }
+.blob { position: absolute; border-radius: 50%; filter: blur(100px); pointer-events: none; }
+.blob-1 { width: 500px; height: 500px; top: -100px; left: 50%; transform: translateX(-50%); background: rgba(232,21,122,0.1); }
+
+.contact-hero-inner { position: relative; z-index: 1; max-width: 680px; margin: 0 auto; }
+.contact-eyebrow {
+  display: inline-flex; align-items: center; gap: 0.6rem;
+  font-size: 0.65rem; font-weight: 700; letter-spacing: 0.25em; text-transform: uppercase;
+  color: var(--pink); margin-bottom: 1.2rem;
+}
+.contact-eyebrow::before { content: '✦'; }
+.contact-hero-title {
+  font-size: clamp(3rem, 7vw, 5.5rem); font-weight: 900;
+  line-height: 0.92; letter-spacing: -0.025em; margin-bottom: 1.4rem;
+}
+.contact-hero-title .pink { color: var(--pink); font-style: italic; font-family: 'Lora', serif; }
+.contact-hero-sub {
+  font-family: 'Lora', serif; font-style: italic;
+  font-size: 1.05rem; line-height: 1.75;
+  color: rgba(245,245,240,0.58); max-width: 480px; margin: 0 auto;
+}
+
+/* ── CONTACT BODY ── */
+.contact-body {
+  padding: 6rem 4rem;
+  max-width: 1200px; margin: 0 auto;
+  display: grid; grid-template-columns: 1fr 1.5fr;
+  gap: 6rem; align-items: start;
+}
+
+/* Left column */
+.contact-left { position: sticky; top: 7rem; }
+
+.contact-label {
+  font-size: 0.62rem; font-weight: 700; letter-spacing: 0.22em;
+  text-transform: uppercase; color: var(--pink);
+  display: flex; align-items: center; gap: 0.7rem; margin-bottom: 1.5rem;
+}
+.contact-label::before { content: ''; width: 22px; height: 2px; background: var(--pink); }
+
+.contact-statement {
+  font-family: 'Lora', serif; font-style: italic;
+  font-size: 1.3rem; line-height: 1.7;
+  color: var(--white); margin-bottom: 2.5rem;
+}
+.contact-statement strong { font-style: normal; color: var(--lime); }
+
+.contact-divider { width: 40px; height: 2px; background: var(--border); margin-bottom: 2.5rem; }
+
+.contact-info-block { display: flex; flex-direction: column; gap: 1.2rem; }
+.contact-info-item {
+  display: flex; align-items: flex-start; gap: 1rem;
+}
+.info-icon {
+  width: 38px; height: 38px; border-radius: 10px;
+  background: rgba(200,224,0,0.07); border: 1px solid rgba(200,224,0,0.15);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1rem; flex-shrink: 0;
+}
+.info-text { display: flex; flex-direction: column; gap: 0.2rem; }
+.info-label { font-size: 0.6rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted); }
+.info-value { font-size: 0.88rem; font-weight: 600; color: var(--white); }
+.info-value a { transition: color 0.2s; }
+.info-value a:hover { color: var(--lime); }
+
+.contact-promise {
+  margin-top: 2.5rem;
+  background: rgba(232,21,122,0.06);
+  border: 1px solid rgba(232,21,122,0.15);
+  border-radius: 16px; padding: 1.4rem;
+}
+.promise-label { font-size: 0.58rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--pink); margin-bottom: 0.6rem; }
+.promise-text { font-family: 'Lora', serif; font-style: italic; font-size: 0.88rem; line-height: 1.65; color: rgba(245,245,240,0.65); }
+
+/* Right column — Fillout embed */
+.contact-form-wrap {
+  background: var(--charcoal);
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  padding: 2.5rem;
+  min-height: 500px;
+}
+
+/* ── FOOTER ── */
+footer { background: var(--black); border-top: 1px solid var(--border); padding: 3rem 4rem 2rem; }
+.footer-top { display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 3rem; padding-bottom: 2.5rem; border-bottom: 1px solid var(--border); margin-bottom: 2rem; }
+.footer-brand { max-width: 270px; }
+.footer-logo { display: flex; align-items: center; gap: 0.55rem; font-weight: 900; font-size: 1.15rem; letter-spacing: 0.04em; margin-bottom: 0.8rem; }
+.footer-logo .lime { color: var(--lime); }
+.footer-logo .pink { color: var(--pink); font-style: italic; }
+.footer-brand p { font-family: 'Lora', serif; font-style: italic; font-size: 0.86rem; line-height: 1.65; color: var(--muted); }
+.footer-nav { display: flex; gap: 4rem; flex-wrap: wrap; }
+.footer-col h4 { font-size: 0.66rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--lime); margin-bottom: 1.1rem; }
+.footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 0.55rem; }
+.footer-col a { font-size: 0.8rem; color: var(--muted); transition: color 0.2s; }
+.footer-col a:hover { color: var(--white); }
+.footer-bottom { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
+.footer-bottom p { font-size: 0.7rem; color: rgba(136,132,118,0.45); }
+.footer-socials { display: flex; gap: 0.8rem; }
+.soc-btn { width: 32px; height: 32px; border-radius: 50%; border: 1px solid var(--border); display: flex; align-items: center; justify-content: center; font-size: 0.82rem; color: var(--muted); transition: all 0.2s; }
+.soc-btn:hover { border-color: var(--pink); color: var(--pink); }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 1024px) {
+  .contact-body { gap: 4rem; }
+}
+
+@media (max-width: 920px) {
+  /* Nav */
+  nav { padding: 1rem 1.5rem; }
+  .nav-links { display: none; }
+  .hamburger { display: flex; }
+
+  /* Hero */
+  .contact-hero { padding: 8rem 1.5rem 4rem; }
+  .contact-hero-title { font-size: clamp(2.5rem, 10vw, 4rem); }
+
+  /* Body — stack columns */
+  .contact-body {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    padding: 4rem 1.5rem;
+  }
+  .contact-left { position: static; }
+  .contact-statement { font-size: 1.1rem; }
+  .contact-form-wrap { padding: 1.5rem; border-radius: 18px; }
+
+  /* Footer */
+  footer { padding: 2.5rem 1.5rem 1.5rem; }
+  .footer-top { flex-direction: column; }
+  .footer-nav { flex-direction: column; gap: 2rem; }
+}
+
+@media (max-width: 480px) {
+  .contact-hero-title { font-size: 2.4rem; }
+  .contact-statement { font-size: 1rem; }
+  .contact-form-wrap { padding: 1rem; border-radius: 14px; }
+}
+</style>
+</head>
+<body>
+
+<!-- MOBILE NAV -->
+<div class="mobile-nav" id="mobileNav">
+  <span class="close-btn" onclick="toggleNav()">✕</span>
+  <a href="index.html" onclick="toggleNav()">Home</a>
+  <a href="about.html" onclick="toggleNav()">About</a>
+  <a href="index.html#audit" onclick="toggleNav()">The Audit</a>
+  <a href="index.html#methodology" onclick="toggleNav()">Methodology</a>
+  <a href="contact.html" onclick="toggleNav()" class="active">Get In Touch</a>
+</div>
+
+<!-- NAV -->
+<nav id="mainNav">
+  <a href="index.html" class="nav-logo">
+    <div class="logo-bolt"></div>
+    <span class="logo-bad">BAD</span><span class="logo-sys">&nbsp;Systems</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="about.html">About</a></li>
+    <li><a href="index.html#audit">The Audit</a></li>
+    <li><a href="index.html#methodology">Methodology</a></li>
+    <li><a href="contact.html" class="nav-btn active">Get In Touch</a></li>
+  </ul>
+  <div class="hamburger" onclick="toggleNav()">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<!-- ── HERO ── -->
+<section class="contact-hero">
+  <div class="hero-grid"></div>
+  <div class="blob blob-1"></div>
+  <div class="contact-hero-inner">
+    <div class="contact-eyebrow">Consulting & Mentorship</div>
+    <h1 class="contact-hero-title">Let's build this <span class="pink">together.</span></h1>
+    <p class="contact-hero-sub">BAD Systems starts with a real conversation. Tell us where you are, and we'll figure out together if we're the right fit.</p>
+  </div>
+</section>
+
+<!-- ── BODY ── -->
+<div class="contact-body">
+
+  <!-- LEFT: context + info -->
+  <div class="contact-left">
+    <div class="contact-label">Done With You, Not For You</div>
+
+    <p class="contact-statement">
+      This isn't a sales call. It's a conversation about where you are, where you want to go, and whether BAD Systems is the right support to get you there.<br><br>
+      <strong>We work alongside you</strong> — building systems you understand, own, and can grow without us.
+    </p>
+
+    <div class="contact-divider"></div>
+
+    <div class="contact-info-block">
+      <div class="contact-info-item">
+        <div class="info-icon">📧</div>
+        <div class="info-text">
+          <span class="info-label">Email</span>
+          <span class="info-value"><a href="mailto:hello@badsystems.co">hello@badsystems.co</a></span>
+        </div>
+      </div>
+      <div class="contact-info-item">
+        <div class="info-icon">⏱</div>
+        <div class="info-text">
+          <span class="info-label">Response Time</span>
+          <span class="info-value">Within 48 hours</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="contact-promise">
+      <div class="promise-label">Our Promise</div>
+      <p class="promise-text">Every message gets a real, thoughtful reply — not a template. If we're not the right fit, we'll tell you honestly and point you somewhere that is.</p>
+    </div>
+  </div>
+
+  <!-- RIGHT: Fillout form -->
+  <div class="contact-form-wrap">
+    <div style="width:100%;height:500px;" data-fillout-id="gAroxCEFQxus" data-fillout-embed-type="standard" data-fillout-inherit-parameters data-fillout-dynamic-resize></div>
+    <script src="https://server.fillout.com/embed/v1/"></script>
+  </div>
+
+</div>
+
+<!-- ── FOOTER ── -->
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <div class="footer-logo">
+        <div class="logo-bolt" style="width:20px;height:20px;"></div>
+        <span class="lime">BAD</span><span class="pink">&nbsp;Systems</span>
+      </div>
+      <p>Consulting and mentorship for service-based entrepreneurs and women-led teams. Done with you, not for you.</p>
+    </div>
+    <div class="footer-nav">
+      <div class="footer-col">
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="about.html">About Jasmine</a></li>
+          <li><a href="index.html#audit">The Audit</a></li>
+          <li><a href="index.html#methodology">Methodology</a></li>
+          <li><a href="index.html#philosophy">Philosophy</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Work Together</h4>
+        <ul>
+          <li><a href="contact.html">Get In Touch</a></li>
+          <li><a href="index.html#audit-signup">Join The Audit</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2025 BAD Systems — Build. Automate. Delegate.</p>
+    <div class="footer-socials">
+      <a href="#" class="soc-btn">𝕏</a>
+      <a href="#" class="soc-btn">in</a>
+      <a href="#" class="soc-btn">▶</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+function toggleNav() {
+  document.getElementById('mobileNav').classList.toggle('open');
+}
+window.addEventListener('scroll', () => {
+  const nav = document.getElementById('mainNav');
+  const isMobile = window.innerWidth <= 920;
+  nav.style.padding = window.scrollY > 50
+    ? (isMobile ? '0.75rem 1.5rem' : '0.75rem 4rem')
+    : (isMobile ? '1rem 1.5rem'   : '1.2rem 4rem');
+});
+</script>
+</body>
+</html>
