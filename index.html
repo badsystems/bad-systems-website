@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>BAD Systems — Build. Automate. Delegate.</title>
-<meta name="description" content="BAD Systems is a human-first systems methodology and mentorship ecosystem helping service-based entrepreneurs design scalable businesses without sacrificing their lives.">
+<meta name="description" content="BAD Systems is a consulting and mentorship ecosystem for service-based entrepreneurs. We work WITH you — not for you — to build scalable businesses without sacrificing your life.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,600;0,700;0,900;1,700&family=Lora:ital,wght@0,400;1,400;1,600&display=swap" rel="stylesheet">
 <style>
@@ -127,8 +127,14 @@ nav {
 
 .hero-tagline {
   font-family: var(--serif); font-style: italic; font-size: clamp(1.05rem, 2.5vw, 1.45rem);
-  color: rgba(245,245,240,0.65); line-height: 1.65; max-width: 620px; margin: 0 auto 0.8rem;
+  color: rgba(245,245,240,0.65); line-height: 1.65; max-width: 620px; margin: 0 auto 0.5rem;
   opacity: 0; animation: fadeUp 0.7s 0.4s ease forwards;
+}
+
+.hero-tagline-2 {
+  font-family: var(--serif); font-style: italic; font-size: clamp(0.95rem, 2vw, 1.2rem);
+  color: var(--pink); line-height: 1.65; max-width: 620px; margin: 0 auto 2.8rem;
+  opacity: 0; animation: fadeUp 0.7s 0.5s ease forwards;
 }
 
 .hero-sub {
@@ -211,6 +217,11 @@ nav {
 .section-title .italic { font-style: italic; font-family: var(--serif); }
 
 .section-lead { font-family: var(--serif); font-style: italic; font-size: 1.02rem; line-height: 1.75; color: rgba(245,245,240,0.58); max-width: 520px; margin-bottom: 4rem; }
+
+.methodology-for {
+  font-size: 0.75rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--pink); margin-bottom: 3.5rem; margin-top: -2.5rem;
+}
 
 .framework-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
 
@@ -367,6 +378,146 @@ nav {
 .feat-t { font-size: 0.8rem; font-weight: 700; color: var(--white); margin-bottom: 0.2rem; }
 .feat-d { font-size: 0.73rem; color: var(--muted); line-height: 1.5; }
 
+/* ── THE AUDIT (new) ── */
+#audit {
+  background: var(--charcoal);
+  border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);
+}
+
+/* Hero block */
+.audit-hero {
+  padding: 8rem 4rem 6rem;
+  background: linear-gradient(160deg, rgba(232,21,122,0.1) 0%, rgba(200,224,0,0.05) 60%, transparent 100%);
+  border-bottom: 1px solid var(--border);
+}
+.audit-hero-inner { max-width: 740px; }
+
+.audit-badge {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  background: rgba(232,21,122,0.12); border: 1px solid rgba(232,21,122,0.3);
+  color: var(--pink); font-size: 0.66rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase;
+  padding: 0.42rem 1rem; border-radius: 999px; margin-bottom: 1.5rem;
+}
+
+.audit-title {
+  font-size: clamp(3rem, 6vw, 5.5rem); font-weight: 900; line-height: 0.88;
+  letter-spacing: -0.025em; margin-bottom: 1.5rem;
+}
+.audit-title .the {
+  display: block; font-size: 0.38em; font-weight: 400; letter-spacing: 0.15em;
+  text-transform: uppercase; color: var(--muted); font-family: var(--serif);
+  font-style: italic; margin-bottom: 0.5rem;
+}
+.audit-title .nm { color: var(--lime); }
+
+.audit-hero-sub {
+  font-size: 1.15rem; font-weight: 700; color: var(--white); margin-bottom: 1.5rem; line-height: 1.4;
+}
+
+.audit-hero-desc {
+  font-family: var(--serif); font-style: italic; font-size: 1rem;
+  line-height: 1.85; color: rgba(245,245,240,0.65); margin-bottom: 1rem;
+}
+
+.audit-belief-line {
+  font-family: var(--serif); font-size: 1.05rem; line-height: 1.7;
+  color: rgba(245,245,240,0.8); border-left: 3px solid var(--pink);
+  padding-left: 1.2rem; margin-top: 1.8rem; font-style: italic;
+}
+.audit-belief-line strong { font-style: normal; color: var(--white); font-size: 1.1rem; }
+
+/* Four layers */
+.audit-layers-wrap {
+  padding: 6rem 4rem;
+  border-bottom: 1px solid var(--border);
+}
+.audit-layers-header { max-width: 580px; margin-bottom: 3.5rem; }
+.audit-sub-title {
+  font-size: clamp(2rem, 4vw, 3.2rem); font-weight: 900; line-height: 0.95;
+  letter-spacing: -0.02em; margin: 0.6rem 0 0.8rem;
+}
+.audit-sub-lead {
+  font-family: var(--serif); font-style: italic; font-size: 0.98rem;
+  line-height: 1.78; color: rgba(245,245,240,0.58);
+}
+
+.audit-layers-grid {
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px;
+  background: var(--border); border: 1px solid var(--border);
+  border-radius: 16px; overflow: hidden;
+}
+
+.audit-layer {
+  background: var(--card-bg); padding: 2.2rem 1.8rem;
+  transition: background 0.3s; position: relative; overflow: hidden;
+}
+.audit-layer:hover { background: #181818; }
+.audit-layer::after {
+  content: ''; position: absolute; bottom: 0; left: 0; right: 0;
+  height: 3px; background: linear-gradient(to right, var(--pink), var(--lime));
+  transform: scaleX(0); transform-origin: left; transition: transform 0.4s ease;
+}
+.audit-layer:hover::after { transform: scaleX(1); }
+
+.layer-num {
+  font-size: 0.62rem; font-weight: 700; letter-spacing: 0.2em;
+  color: var(--pink); margin-bottom: 1rem;
+}
+.layer-name {
+  font-size: 1.6rem; font-weight: 900; color: var(--lime);
+  letter-spacing: -0.01em; margin-bottom: 0.3rem;
+}
+.layer-tag {
+  font-size: 0.65rem; font-weight: 700; letter-spacing: 0.14em;
+  text-transform: uppercase; color: var(--muted); margin-bottom: 1.1rem;
+}
+.layer-desc {
+  font-family: var(--serif); font-style: italic; font-size: 0.88rem;
+  line-height: 1.75; color: rgba(245,245,240,0.58);
+}
+
+/* Who it's for + belief */
+.audit-bottom-grid {
+  display: grid; grid-template-columns: 1fr 1fr;
+  border-bottom: 1px solid var(--border);
+}
+
+.audit-for-wrap {
+  padding: 5rem 4rem; border-right: 1px solid var(--border);
+}
+.audit-for-list { display: flex; flex-direction: column; gap: 0; margin-top: 2rem; }
+.audit-for-item {
+  display: flex; align-items: center; gap: 1rem;
+  padding: 1rem 0; border-bottom: 1px solid var(--border);
+  font-size: 0.88rem; font-weight: 500; color: rgba(245,245,240,0.8); line-height: 1.4;
+}
+.audit-for-item::before {
+  content: '✦'; color: var(--lime); font-size: 0.6rem; flex-shrink: 0;
+}
+
+.audit-belief-wrap { padding: 5rem 4rem; }
+.audit-belief-big {
+  font-family: var(--display); font-size: clamp(2.2rem, 4vw, 3.5rem);
+  font-weight: 900; line-height: 1; letter-spacing: -0.02em;
+  margin: 1rem 0 1.8rem;
+}
+.audit-belief-body {
+  font-family: var(--serif); font-style: italic; font-size: 0.97rem;
+  line-height: 1.82; color: rgba(245,245,240,0.62); margin-bottom: 1rem;
+}
+
+/* One sentence footer */
+.audit-footer-band {
+  padding: 4rem; text-align: center;
+  display: flex; flex-direction: column; align-items: center; gap: 2rem;
+  background: rgba(232,21,122,0.06);
+}
+.audit-one-sentence {
+  font-family: var(--serif); font-style: italic; font-size: clamp(1rem, 2vw, 1.3rem);
+  line-height: 1.75; color: rgba(245,245,240,0.75); max-width: 700px;
+}
+.audit-one-sentence strong { font-style: normal; color: var(--white); }
+
 /* ── INSIGHTS ── */
 #insights { padding: 8rem 4rem; }
 .insights-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: 4rem; }
@@ -387,6 +538,24 @@ nav {
 .insight-title { font-size: 1rem; font-weight: 700; line-height: 1.35; color: var(--white); flex: 1; }
 .insight-read { display: flex; align-items: center; gap: 0.5rem; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--lime); transition: gap 0.2s; }
 .insight-card:hover .insight-read { gap: 0.9rem; }
+
+/* ── AUDIT INLINE SIGNUP ── */
+.audit-signup-band {
+  padding: 5rem 4rem;
+  background: rgba(232,21,122,0.06);
+  border-top: 1px solid var(--border);
+}
+.audit-signup-inner {
+  display: grid; grid-template-columns: 1fr 1.4fr; gap: 5rem; align-items: start;
+  max-width: 1100px; margin: 0 auto;
+}
+.audit-signup-left { padding-top: 1rem; }
+.audit-inline-form { display: flex; flex-direction: column; gap: 1.1rem; }
+
+@media (max-width: 920px) {
+  .audit-signup-band { padding: 4rem 1.5rem; }
+  .audit-signup-inner { grid-template-columns: 1fr; gap: 2.5rem; }
+}
 
 /* ── CONTACT ── */
 #contact {
@@ -457,30 +626,211 @@ footer { background: var(--black); border-top: 1px solid var(--border); padding:
 }
 .soc-btn:hover { border-color: var(--pink); color: var(--pink); }
 
+/* ── ABOUT ── */
+#about {
+  padding: 8rem 4rem;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  background: var(--charcoal);
+}
+.about-inner {
+  display: grid; grid-template-columns: 1fr 1.6fr;
+  gap: 6rem; align-items: start;
+  max-width: 1100px; margin: 0 auto;
+}
+.about-visual { display: flex; flex-direction: column; gap: 2rem; }
+.about-img-wrap { position: relative; }
+.about-img-placeholder {
+  width: 100%; aspect-ratio: 3/4;
+  background: linear-gradient(145deg, rgba(232,21,122,0.15), rgba(200,224,0,0.08));
+  border: 1px solid var(--border); border-radius: 20px;
+  display: flex; align-items: center; justify-content: center;
+}
+.about-initials {
+  font-size: 5rem; font-weight: 900; color: var(--lime);
+  opacity: 0.3; letter-spacing: -0.02em;
+}
+.about-tag {
+  position: absolute; bottom: 1.2rem; left: 50%; transform: translateX(-50%);
+  background: rgba(13,13,13,0.9); border: 1px solid rgba(200,224,0,0.3);
+  color: var(--lime); font-size: 0.62rem; font-weight: 700;
+  letter-spacing: 0.18em; text-transform: uppercase;
+  padding: 0.45rem 1.1rem; border-radius: 999px; white-space: nowrap;
+}
+.about-stat-row {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;
+}
+.about-stat {
+  background: var(--card-bg); border: 1px solid var(--border);
+  border-radius: 14px; padding: 1.2rem; text-align: center;
+}
+.stat-num {
+  display: block; font-size: 1.6rem; font-weight: 900;
+  color: var(--lime); letter-spacing: -0.02em; line-height: 1;
+}
+.stat-label {
+  display: block; font-size: 0.6rem; font-weight: 700;
+  letter-spacing: 0.15em; text-transform: uppercase;
+  color: var(--muted); margin-top: 0.4rem;
+}
+.about-lead {
+  font-size: 1.05rem; font-weight: 600; color: var(--white);
+  line-height: 1.6; margin-bottom: 1.5rem; margin-top: 0.5rem;
+}
+.about-body {
+  font-family: var(--serif); font-style: italic; font-size: 0.97rem;
+  line-height: 1.85; color: rgba(245,245,240,0.65); margin-bottom: 1rem;
+}
+.about-body strong { font-style: normal; color: var(--white); }
+.italic-close { color: rgba(245,245,240,0.5) !important; }
+
 /* ── RESPONSIVE ── */
 @media (max-width: 920px) {
+  /* Nav */
   nav { padding: 1rem 1.5rem; }
   .nav-links { display: none; }
   .hamburger { display: flex; }
+
+  /* Hero */
   #hero { padding: 8rem 1.5rem 4rem; }
   .hero-pillars { flex-direction: column; }
-  .pain-band { grid-template-columns: 1fr; gap: 3rem; padding: 4rem 1.5rem; }
-  #methodology, #insights { padding: 5rem 1.5rem; }
+  .hero-tagline, .hero-tagline-2 { font-size: 1rem; }
+  .hero-actions { flex-direction: column; align-items: center; }
+  .hero-actions .btn { width: 100%; max-width: 320px; justify-content: center; }
+
+  /* Pain band */
+  .pain-band { grid-template-columns: 1fr; gap: 2.5rem; padding: 4rem 1.5rem; }
+
+  /* Methodology */
+  #methodology { padding: 5rem 1.5rem; }
   .framework-grid { grid-template-columns: 1fr; }
-  #systems { padding: 5rem 1.5rem; }
-  .systems-layout { grid-template-columns: 1fr; gap: 2.5rem; }
+
+  /* Philosophy */
   #philosophy { padding: 5rem 1.5rem; }
   .philosophy-grid { grid-template-columns: 1fr; gap: 3rem; }
   .phil-visual { height: 260px; }
-  #audit { padding: 5rem 1.5rem; }
-  .audit-inner { grid-template-columns: 1fr; gap: 3rem; padding: 2.5rem 1.5rem; }
-  .insights-grid { grid-template-columns: 1fr; }
-  #contact { padding: 5rem 1.5rem; }
-  .contact-form { padding: 1.8rem; }
-  .form-row { grid-template-columns: 1fr; }
+  .phil-values { grid-template-columns: 1fr; }
+
+  /* About */
+  #about { padding: 5rem 1.5rem; }
+  .about-inner { grid-template-columns: 1fr; gap: 3rem; }
+  .about-img-placeholder { aspect-ratio: 1; }
+  .about-stat-row { grid-template-columns: 1fr 1fr; }
+
+  /* Audit */
+  #audit { padding: 0; }
+  .audit-hero { padding: 5rem 1.5rem 3rem; }
+  .audit-layers-wrap { padding: 4rem 1.5rem; }
+  .audit-layers-grid { grid-template-columns: 1fr; }
+  .audit-bottom-grid { grid-template-columns: 1fr; }
+  .audit-for-wrap { padding: 3rem 1.5rem; border-right: none; border-bottom: 1px solid var(--border); }
+  .audit-belief-wrap { padding: 3rem 1.5rem; }
+  .audit-signup-band { padding: 4rem 1.5rem; }
+  .audit-signup-inner { grid-template-columns: 1fr; gap: 2.5rem; }
+  .audit-form-row { grid-template-columns: 1fr; }
+
+  /* Footer */
   footer { padding: 2.5rem 1.5rem 1.5rem; }
   .footer-top { flex-direction: column; }
   .footer-nav { flex-direction: column; gap: 2rem; }
+}
+
+@media (max-width: 480px) {
+  .audit-layers-grid { grid-template-columns: 1fr; }
+  .audit-title { font-size: 3.2rem; }
+  .section-title { font-size: 2rem; }
+  .hero-title { font-size: 3rem; }
+  .audit-belief-big { font-size: 2.2rem; }
+}
+
+/* ── AUDIT MODAL ── */
+.audit-modal-overlay {
+  position: fixed; inset: 0; z-index: 500;
+  background: rgba(0,0,0,0.88);
+  backdrop-filter: blur(10px);
+  display: flex; align-items: center; justify-content: center;
+  padding: 1.5rem;
+  opacity: 0; pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+.audit-modal-overlay.open {
+  opacity: 1; pointer-events: all;
+}
+.audit-modal {
+  background: var(--charcoal);
+  border: 1px solid rgba(232,21,122,0.3);
+  border-radius: 24px;
+  padding: 2.5rem;
+  width: 100%; max-width: 520px;
+  position: relative;
+  transform: translateY(20px);
+  transition: transform 0.3s ease;
+  /* No overflow-y: auto — form fits without scroll */
+}
+.audit-modal-overlay.open .audit-modal {
+  transform: translateY(0);
+}
+.audit-modal-close {
+  position: absolute; top: 1.1rem; right: 1.4rem;
+  background: none; border: none; color: var(--muted);
+  font-size: 1.2rem; cursor: pointer; transition: color 0.2s;
+  line-height: 1;
+}
+.audit-modal-close:hover { color: var(--white); }
+.audit-modal-badge {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  background: rgba(232,21,122,0.12); border: 1px solid rgba(232,21,122,0.3);
+  color: var(--pink); font-size: 0.62rem; font-weight: 700;
+  letter-spacing: 0.2em; text-transform: uppercase;
+  padding: 0.35rem 0.85rem; border-radius: 999px; margin-bottom: 1rem;
+}
+.audit-modal-title {
+  font-size: 1.9rem; font-weight: 900; letter-spacing: -0.02em;
+  line-height: 1; margin-bottom: 0.5rem;
+}
+.audit-modal-title span { color: var(--lime); }
+.audit-modal-sub {
+  font-family: var(--serif); font-style: italic; font-size: 0.88rem;
+  line-height: 1.6; color: rgba(245,245,240,0.55); margin-bottom: 1.5rem;
+}
+.audit-modal-form { display: flex; flex-direction: column; gap: 0.9rem; }
+.audit-form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 0.9rem; }
+.audit-form-group { display: flex; flex-direction: column; gap: 0.35rem; }
+.audit-form-group label {
+  font-size: 0.6rem; font-weight: 700; letter-spacing: 0.18em;
+  text-transform: uppercase; color: var(--muted);
+}
+.audit-form-group input,
+.audit-form-group textarea,
+.audit-form-group select {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid var(--border); border-radius: 10px;
+  padding: 0.75rem 0.9rem; color: var(--white);
+  font-family: var(--display); font-size: 0.82rem;
+  outline: none; transition: border-color 0.25s;
+  -webkit-appearance: none; width: 100%;
+}
+.audit-form-group input:focus,
+.audit-form-group textarea:focus,
+.audit-form-group select:focus { border-color: var(--pink); }
+.audit-form-group input::placeholder,
+.audit-form-group textarea::placeholder { color: rgba(136,132,118,0.4); }
+.audit-form-group textarea { resize: none; height: 80px; }
+.audit-form-group select option { background: var(--charcoal); }
+.audit-form-submit {
+  background: var(--pink); color: var(--white);
+  font-family: var(--display); font-weight: 700; font-size: 0.8rem;
+  letter-spacing: 0.12em; text-transform: uppercase;
+  padding: 0.95rem; border-radius: 999px; border: none;
+  cursor: pointer; transition: background 0.25s, transform 0.2s;
+  margin-top: 0.3rem; width: 100%;
+}
+.audit-form-submit:hover { background: var(--lime); color: var(--black); transform: scale(1.02); }
+
+@media (max-width: 920px) {
+  .audit-modal { padding: 2rem 1.5rem; max-width: 100%; border-radius: 20px; }
+  .audit-form-row { grid-template-columns: 1fr; }
+  .audit-modal-title { font-size: 1.6rem; }
 }
 </style>
 </head>
@@ -489,12 +839,11 @@ footer { background: var(--black); border-top: 1px solid var(--border); padding:
 <!-- MOBILE NAV -->
 <div class="mobile-nav" id="mobileNav">
   <span class="close-btn" onclick="toggleNav()">✕</span>
-  <a href="#methodology" onclick="toggleNav()">Methodology</a>
-  <a href="#systems" onclick="toggleNav()">Systems</a>
-  <a href="#philosophy" onclick="toggleNav()">Philosophy</a>
+  <a href="about.html" onclick="toggleNav()">About</a>
   <a href="#audit" onclick="toggleNav()">The Audit</a>
-  <a href="#insights" onclick="toggleNav()">Insights</a>
-  <a href="#contact" onclick="toggleNav()">Connect</a>
+  <a href="#methodology" onclick="toggleNav()">Methodology</a>
+  <a href="#philosophy" onclick="toggleNav()">Philosophy</a>
+  <a href="#" onclick="openContactForm(); toggleNav(); return false;">Get In Touch</a>
 </div>
 
 <!-- NAV -->
@@ -504,12 +853,11 @@ footer { background: var(--black); border-top: 1px solid var(--border); padding:
     <span class="logo-bad">BAD</span><span class="logo-sys">&nbsp;Systems</span>
   </a>
   <ul class="nav-links">
-    <li><a href="#methodology">Methodology</a></li>
-    <li><a href="#systems">Systems</a></li>
-    <li><a href="#philosophy">Philosophy</a></li>
+    <li><a href="about.html">About</a></li>
     <li><a href="#audit">The Audit</a></li>
-    <li><a href="#insights">Insights</a></li>
-    <li><a href="#contact" class="nav-btn">Let's Connect</a></li>
+    <li><a href="#methodology">Methodology</a></li>
+    <li><a href="#philosophy">Philosophy</a></li>
+    <li><a href="#" onclick="openContactForm(); return false;" class="nav-btn">Get In Touch</a></li>
   </ul>
   <div class="hamburger" onclick="toggleNav()">
     <span></span><span></span><span></span>
@@ -525,7 +873,7 @@ footer { background: var(--black); border-top: 1px solid var(--border); padding:
   <div class="hero-content">
     <div class="hero-badge">
       <span class="badge-dot"></span>
-      A Systems Methodology &amp; Mentorship Ecosystem
+      Consulting &amp; Mentorship
     </div>
 
     <h1 class="hero-title">
@@ -534,14 +882,15 @@ footer { background: var(--black); border-top: 1px solid var(--border); padding:
     </h1>
 
     <p class="hero-tagline">
-      Stop running your business on adrenaline.<br>Start designing it with intention.
+      Systems for your business. Space for your humanity.
+    </p>
+    <p class="hero-tagline-2">
+      The methodology that builds your business. The Audit that protects your life.
     </p>
 
-    <p class="hero-sub">Build &bull; Automate &bull; Delegate</p>
-
     <div class="hero-actions">
-      <a href="#methodology" class="btn btn-lime">Explore the Framework →</a>
-      <a href="#contact" class="btn btn-outline">Work With Us</a>
+      <a href="#audit-hero-top" class="btn btn-lime">Explore The Audit →</a>
+      <a href="#methodology" class="btn btn-outline">The BAD Methodology →</a>
     </div>
 
     <div class="hero-pillars">
@@ -564,8 +913,8 @@ footer { background: var(--black); border-top: 1px solid var(--border); padding:
 <!-- ═══ PAIN → PURPOSE ═══ -->
 <div class="pain-band">
   <div class="pain-left">
-    <h2>We turn your <span class="pink">hardest moments</span> into your greatest systems.</h2>
-    <p>Every founder's journey starts with friction. BAD Systems exists to transform that friction into fuel — giving you the frameworks to move from overwhelm to ownership, and from anxiety to aligned action.</p>
+    <h2>Your <span class="pink">breakthrough</span> is already inside your business.</h2>
+    <p>We don't come in and fix things for you. We work alongside you — helping you see clearly, move deliberately, and build systems you actually understand and own. This is mentorship and consulting that sticks.</p>
   </div>
   <div>
     <div class="pain-row"><span class="pain-from">Pain</span><span class="pain-arrow">→</span><span class="pain-to">Purpose</span></div>
@@ -576,11 +925,137 @@ footer { background: var(--black); border-top: 1px solid var(--border); padding:
   </div>
 </div>
 
+<!-- ═══ THE AUDIT ═══ -->
+<section id="audit">
+
+  <!-- HERO BLOCK -->
+  <div class="audit-hero" id="audit-hero-top">
+    <div class="audit-hero-inner">
+      <div class="audit-badge">✦ For Women. By Design.</div>
+      <h2 class="audit-title">
+        <span class="the">Introducing</span>
+        <span class="nm">The Audit</span>
+      </h2>
+      <p class="audit-hero-sub">A space for women to review alignment, refine systems, and stay human — together.</p>
+      <p class="audit-hero-desc">A structured pause for ambitious women who are building full lives — businesses, relationships, responsibilities — and don't want success to cost them their wholeness, humanity, softness, self, or peace.</p>
+      <p class="audit-hero-desc">It's not about tearing everything down. It's about stepping back with intention. Supported by BAD Systems methodology — <em>Build. Automate. Delegate.</em> — The Audit creates space to evaluate what's working, what feels misaligned, and what needs to be redesigned — before burnout makes the decision for you.</p>
+      <p class="audit-belief-line">Because the goal was never just a scalable business.<br><strong>It was a life your business supports.</strong></p>
+      <a href="#audit-signup" class="btn btn-lime" style="margin-top:1.5rem;">Join The Audit →</a>
+    </div>
+  </div>
+
+  <!-- FOUR LAYERS -->
+  <div class="audit-layers-wrap">
+    <div class="audit-layers-header">
+      <div class="section-eyebrow" style="color:var(--lime);">The Framework</div>
+      <h3 class="audit-sub-title">The Four <span style="color:var(--pink);font-style:italic;font-family:var(--serif);">Layers</span></h3>
+      <p class="audit-sub-lead">The Audit moves through four intentional layers — each rooted in the BAD Systems philosophy of building businesses that protect your time, energy, and relationships, not consume them.</p>
+    </div>
+    <div class="audit-layers-grid">
+      <div class="audit-layer">
+        <div class="layer-num">01</div>
+        <div class="layer-name">Review</div>
+        <div class="layer-tag">See Clearly</div>
+        <p class="layer-desc">Taking an honest look at your life, business, habits, and systems — without shame or urgency. Not to tear it down. To see it clearly.</p>
+      </div>
+      <div class="audit-layer">
+        <div class="layer-num">02</div>
+        <div class="layer-name">Refine</div>
+        <div class="layer-tag">Redesign With Intention</div>
+        <p class="layer-desc">Simplifying, redesigning, or releasing what no longer serves your next season. Where what you created gets pressure-tested against who you're becoming.</p>
+      </div>
+      <div class="audit-layer">
+        <div class="layer-num">03</div>
+        <div class="layer-name">Protect</div>
+        <div class="layer-tag">Freedom By Design</div>
+        <p class="layer-desc">Safeguarding your time, energy, nervous system, and identity. This is the work Automate and Delegate were always meant to serve — not efficiency for its own sake, but freedom by design.</p>
+      </div>
+      <div class="audit-layer">
+        <div class="layer-num">04</div>
+        <div class="layer-name">Integrate</div>
+        <div class="layer-tag">Architecture For Real Life</div>
+        <p class="layer-desc">Using tech, structure, and systems in service of your humanity — not in opposition to it. BAD Systems in its fullest expression: architecture that makes space for real life.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- WHO IT'S FOR + BELIEF -->
+  <div class="audit-bottom-grid">
+
+    <div class="audit-for-wrap">
+      <div class="section-eyebrow">Who It's For</div>
+      <h3 class="audit-sub-title">Built for <span style="color:var(--pink);font-style:italic;font-family:var(--serif);">builders</span><br>who don't want<br>to burn it down.</h3>
+      <div class="audit-for-list">
+        <div class="audit-for-item">Feel capable but stretched thin</div>
+        <div class="audit-for-item">Have built success that doesn't fully feel like theirs</div>
+        <div class="audit-for-item">Want better systems without becoming robotic</div>
+        <div class="audit-for-item">Care deeply about impact — and about being present</div>
+        <div class="audit-for-item">Are ready to stop being the bottleneck in their own lives</div>
+      </div>
+    </div>
+
+    <div class="audit-belief-wrap">
+      <div class="section-eyebrow">The Core Belief</div>
+      <p class="audit-belief-big">Discomfort is<br><span style="color:var(--lime);">information.</span></p>
+      <p class="audit-belief-body">Overwhelm. Irritation. Fatigue. Resistance. These are signals — not character flaws. BAD Systems was built on this same truth — that pain can become purpose, that anxiety can become structure, that overwhelm can become clarity.</p>
+      <p class="audit-belief-body">The Audit is where that translation happens in real time, in community, with intention. Your signals aren't telling you that you've failed. They're telling you something needs to be redesigned.</p>
+      <p class="audit-belief-body"><em>The Audit helps you hear them — and answer back with design instead of depletion.</em></p>
+    </div>
+
+  </div>
+
+  <!-- INLINE AUDIT SIGNUP -->
+  <div class="audit-signup-band" id="audit-signup">
+    <div class="audit-signup-inner">
+      <div class="audit-signup-left">
+        <p class="audit-one-sentence">The Audit is a guided, human-first reset — powered by BAD Systems methodology — where ambitious women <strong>review alignment, refine systems, and protect their humanity</strong>, together.</p>
+      </div>
+      <form class="audit-inline-form" onsubmit="handleAuditSubmit(event)">
+        <div class="audit-form-row">
+          <div class="audit-form-group">
+            <label>First Name</label>
+            <input type="text" placeholder="Your first name" required>
+          </div>
+          <div class="audit-form-group">
+            <label>Last Name</label>
+            <input type="text" placeholder="Your last name">
+          </div>
+        </div>
+        <div class="audit-form-group">
+          <label>Email Address</label>
+          <input type="email" placeholder="you@yourbusiness.com" required>
+        </div>
+        <div class="audit-form-group">
+          <label>What best describes you?</label>
+          <select required>
+            <option value="" disabled selected>Select your role…</option>
+            <option>Solopreneur</option>
+            <option>Founder / CEO</option>
+            <option>Creative / Freelancer</option>
+            <option>Women-led team</option>
+            <option>Admin / Operations support</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div class="audit-form-group">
+          <label>What are you hoping The Audit gives you?</label>
+          <textarea placeholder="Share as little or as much as you'd like — what would feel like relief right now?"></textarea>
+        </div>
+        <button type="submit" class="audit-form-submit">Reserve My Spot ✦</button>
+      </form>
+    </div>
+  </div>
+
+</section>
+
+<!-- ═══ INSIGHTS ═══ -->
+
 <!-- ═══ METHODOLOGY ═══ -->
 <section id="methodology">
-  <div class="section-eyebrow">The Framework</div>
+  <div class="section-eyebrow">BAD Systems = Methodology</div>
   <h2 class="section-title">The <span class="lime">BAD</span> <span class="italic pink">Methodology</span></h2>
-  <p class="section-lead">Three intentional pillars that transform how you build, run, and grow a service business — without sacrificing what matters most.</p>
+  <p class="section-lead">This isn't a done-for-you service. It's a hands-on mentorship framework you learn, apply, and own — with us right beside you every step of the way.</p>
+  <p class="methodology-for">For solopreneurs, women-led teams, and the admins supporting them.</p>
 
   <div class="framework-grid">
     <div class="framework-card">
@@ -588,13 +1063,7 @@ footer { background: var(--black); border-top: 1px solid var(--border); padding:
       <div class="card-big-letter">B</div>
       <div class="card-word">Build</div>
       <div class="card-tagline">Intentional Foundations</div>
-      <p class="card-desc">Before you automate or delegate, you need clarity. Build means designing the core of your business with purpose — your offers, processes, and vision — so everything that follows is aligned.</p>
-      <div class="card-items">
-        <span class="card-item">Core offer architecture</span>
-        <span class="card-item">Process documentation</span>
-        <span class="card-item">Strategic clarity mapping</span>
-        <span class="card-item">Brand &amp; positioning</span>
-      </div>
+      <p class="card-desc">Before you automate or delegate, you need clarity. Together, we map the foundations of your business — your offers, processes, and vision — so you can build with intention rather than reaction.</p>
     </div>
 
     <div class="framework-card">
@@ -602,13 +1071,7 @@ footer { background: var(--black); border-top: 1px solid var(--border); padding:
       <div class="card-big-letter">A</div>
       <div class="card-word">Automate</div>
       <div class="card-tagline">Aligned Technology</div>
-      <p class="card-desc">Technology should serve your life, not consume it. Automate means implementing smart, human-first tools that handle the repetitive — freeing your energy for the creative and the strategic.</p>
-      <div class="card-items">
-        <span class="card-item">Workflow automation</span>
-        <span class="card-item">CRM &amp; client systems</span>
-        <span class="card-item">Communication flows</span>
-        <span class="card-item">Reporting &amp; analytics</span>
-      </div>
+      <p class="card-desc">Technology should serve your life, not consume it. We guide you through selecting and implementing the right tools — so you understand what's running, why it's running, and how to adapt it as you grow.</p>
     </div>
 
     <div class="framework-card">
@@ -616,57 +1079,7 @@ footer { background: var(--black); border-top: 1px solid var(--border); padding:
       <div class="card-big-letter">D</div>
       <div class="card-word">Delegate</div>
       <div class="card-tagline">Sustainable Expansion</div>
-      <p class="card-desc">Growth requires letting go. Delegate means building the team structures, SOPs, and leadership systems that let you expand without bottlenecking everything through yourself.</p>
-      <div class="card-items">
-        <span class="card-item">Team structure design</span>
-        <span class="card-item">SOP creation</span>
-        <span class="card-item">Leadership frameworks</span>
-        <span class="card-item">Hiring &amp; onboarding</span>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ═══ 5 SYSTEMS ═══ -->
-<section id="systems">
-  <div class="section-eyebrow">The Architecture</div>
-  <h2 class="section-title">5 Core <span class="italic pink">Systems</span></h2>
-  <p class="section-lead">Every scalable service business is built on five interconnected systems. We help you design, optimize, and own each one.</p>
-
-  <div class="systems-layout">
-    <div id="systemsList">
-      <div class="system-row active" onclick="setSystem(0)">
-        <div class="sys-icon">📈</div>
-        <span class="sys-name">Business Development</span>
-      </div>
-      <div class="system-row" onclick="setSystem(1)">
-        <div class="sys-icon">🎯</div>
-        <span class="sys-name">Acquisition System</span>
-      </div>
-      <div class="system-row" onclick="setSystem(2)">
-        <div class="sys-icon">📦</div>
-        <span class="sys-name">Fulfillment System</span>
-      </div>
-      <div class="system-row" onclick="setSystem(3)">
-        <div class="sys-icon">🤝</div>
-        <span class="sys-name">Culture System</span>
-      </div>
-      <div class="system-row" onclick="setSystem(4)">
-        <div class="sys-icon">💰</div>
-        <span class="sys-name">Finance System</span>
-      </div>
-    </div>
-
-    <div class="sys-detail" id="sysDetail">
-      <div class="detail-icon">📈</div>
-      <div class="detail-title">Business Development</div>
-      <p class="detail-desc">Your business development system is the engine of intentional growth. It connects your vision to your market — turning strategic thinking into pipeline, partnerships, and opportunities that align with your values and lifestyle goals.</p>
-      <div class="detail-tags">
-        <span class="detail-tag">Strategy</span>
-        <span class="detail-tag">Partnerships</span>
-        <span class="detail-tag">Offers</span>
-        <span class="detail-tag">Revenue Design</span>
-      </div>
+      <p class="card-desc">Growth requires letting go — but only once you've built the systems to support it. We help you design the team structures and SOPs yourself, so delegation becomes a confident choice, not a leap of faith.</p>
     </div>
   </div>
 </section>
@@ -688,164 +1101,82 @@ footer { background: var(--black); border-top: 1px solid var(--border); padding:
     </div>
 
     <div class="phil-text">
-      <h2>Technology should create <em>more life,</em> not consume it.</h2>
-      <p>We believe the most powerful systems are the ones built around <strong>human beings first</strong> — their rhythms, their values, their vision for a life well-lived.</p>
-      <p>BAD Systems sits at the intersection of <strong>technology and emotional intelligence</strong>. We reject hustle culture's premise that more hours equals more success. Instead, we design businesses that are spacious, strategic, and deeply sustainable.</p>
-      <p>This is not just consulting. <em>This is a philosophy of how business and life can coexist beautifully.</em></p>
+      <h2>We're not here to do it <em>for you.</em><br>We're here to do it <em>with you.</em></h2>
+      <p>BAD Systems is not an agency. We don't take things off your plate and hand them back done. We sit alongside you — <strong>mentoring, consulting, and co-building</strong> — until you have the clarity, capability, and confidence to run your systems yourself.</p>
+      <p>This is the intersection of <strong>strategy and emotional intelligence</strong>. We reject the idea that founders should outsource their thinking. Instead, we develop yours — building businesses that are spacious, strategic, and deeply sustainable.</p>
+      <p><em>Done with you, not for you. That's the only way it truly sticks.</em></p>
 
       <div class="phil-values">
         <div class="phil-val">
-          <div class="vt">Spacious Leadership</div>
-          <div class="vd">Lead from clarity, not from chaos.</div>
+          <div class="vt">Done With You</div>
+          <div class="vd">We build alongside you — never instead of you.</div>
         </div>
         <div class="phil-val">
-          <div class="vt">Aligned Technology</div>
-          <div class="vd">Tools that serve you, not the other way around.</div>
+          <div class="vt">You Own It</div>
+          <div class="vd">Every system we help you build, you fully understand.</div>
         </div>
         <div class="phil-val">
           <div class="vt">Sustainable Growth</div>
-          <div class="vd">Scale without burning out.</div>
+          <div class="vd">Scale without burning out or losing control.</div>
         </div>
         <div class="phil-val">
-          <div class="vt">Intentional Design</div>
-          <div class="vd">Every system built on purpose.</div>
+          <div class="vt">No Black Boxes</div>
+          <div class="vd">If you can't explain it, we haven't done our job.</div>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ═══ THE AUDIT ═══ -->
-<section id="audit">
-  <div class="audit-inner">
-    <div>
-      <div class="audit-badge">✦ Community Ecosystem</div>
-      <h2 class="audit-title">
-        <span class="the">Introducing</span>
-        <span class="nm">The Audit</span>
-      </h2>
-      <p class="audit-desc">An evolving community space for founders who are done with surface-level advice. The Audit is where reflection meets strategy — a place to examine your business deeply, alongside others on the same path.</p>
-      <a href="#contact" class="btn btn-lime" style="margin-top:0.5rem;">Join the Waitlist →</a>
-    </div>
 
-    <div class="audit-features">
-      <div class="audit-feat">
-        <div class="feat-icon">🔍</div>
-        <div>
-          <div class="feat-t">Strategic Reflection Sessions</div>
-          <div class="feat-d">Regular facilitated sessions to audit your systems, decisions, and direction.</div>
-        </div>
-      </div>
-      <div class="audit-feat">
-        <div class="feat-icon">🧠</div>
-        <div>
-          <div class="feat-t">Peer Mentorship Circles</div>
-          <div class="feat-d">Small, curated groups of founders committed to growth without compromise.</div>
-        </div>
-      </div>
-      <div class="audit-feat">
-        <div class="feat-icon">🗺️</div>
-        <div>
-          <div class="feat-t">BAD Frameworks Library</div>
-          <div class="feat-d">Access to the full ecosystem of templates, SOPs, and strategic tools.</div>
-        </div>
-      </div>
-      <div class="audit-feat">
-        <div class="feat-icon">⚡</div>
-        <div>
-          <div class="feat-t">Live Implementation Support</div>
-          <div class="feat-d">Real-time help building and deploying your systems — not just theory.</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
 
-<!-- ═══ INSIGHTS ═══ -->
-<section id="insights">
-  <div class="section-eyebrow">Thought Leadership</div>
-  <h2 class="section-title">Insights &amp; <span class="italic pink">Frameworks</span></h2>
-  <p class="section-lead">Ideas, reflections, and strategic thinking from the BAD Systems world — written for founders who think deeply about how they build.</p>
+<!-- ═══ CONTACT MODAL ═══ -->
+<div class="audit-modal-overlay" id="contactModal" onclick="closeContactForm(event)">
+  <div class="audit-modal">
+    <button class="audit-modal-close" onclick="closeContactFormDirect()">✕</button>
+    <div class="audit-modal-badge">✦ Consulting & Mentorship</div>
+    <h3 class="audit-modal-title">Let's build this <span>together.</span></h3>
+    <p class="audit-modal-sub">BAD Systems starts with a real conversation. Tell us where you are, and we'll figure out together if we're the right fit.</p>
 
-  <div class="insights-grid">
-    <div class="insight-card">
-      <div class="insight-img">⚡</div>
-      <div class="insight-body">
-        <div class="insight-cat">Systems Strategy</div>
-        <div class="insight-title">Why Your Business Feels Like a Hamster Wheel (And How to Escape It)</div>
-        <div class="insight-read">Read Article →</div>
-      </div>
-    </div>
-    <div class="insight-card">
-      <div class="insight-img">🧩</div>
-      <div class="insight-body">
-        <div class="insight-cat">Automation</div>
-        <div class="insight-title">The 80/20 of Business Automation: What to Systemize First</div>
-        <div class="insight-read">Read Article →</div>
-      </div>
-    </div>
-    <div class="insight-card">
-      <div class="insight-img">🌱</div>
-      <div class="insight-body">
-        <div class="insight-cat">Leadership</div>
-        <div class="insight-title">Spacious Leadership: Building a Business That Doesn't Need You Every Hour</div>
-        <div class="insight-read">Read Article →</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ═══ CONTACT ═══ -->
-<section id="contact">
-  <div class="contact-wrap">
-    <div class="section-eyebrow" style="justify-content:center; margin-bottom:0.8rem;">Let's Connect</div>
-    <h2 class="contact-title">
-      Ready to <span class="pink">design</span><br>your <span class="lime">better</span> business?
-    </h2>
-    <p class="contact-lead">No aggressive funnels. No pressure. Just a real conversation about where you are, where you want to go, and how BAD Systems can help you get there.</p>
-
-    <form class="contact-form" onsubmit="handleSubmit(event)">
-      <div class="form-row">
-        <div class="form-group">
+    <form class="audit-modal-form" onsubmit="handleContactSubmit(event)">
+      <div class="audit-form-row">
+        <div class="audit-form-group">
           <label>First Name</label>
-          <input type="text" placeholder="Your first name">
+          <input type="text" placeholder="Your first name" required>
         </div>
-        <div class="form-group">
+        <div class="audit-form-group">
           <label>Last Name</label>
           <input type="text" placeholder="Your last name">
         </div>
       </div>
-      <div class="form-group">
+      <div class="audit-form-group">
         <label>Email Address</label>
-        <input type="email" placeholder="you@yourbusiness.com">
+        <input type="email" placeholder="you@yourbusiness.com" required>
       </div>
-      <div class="form-group">
+      <div class="audit-form-group">
         <label>What best describes you?</label>
-        <select>
+        <select required>
           <option value="" disabled selected>Select your role…</option>
-          <option>Service-based entrepreneur</option>
+          <option>Solopreneur</option>
           <option>Founder / CEO</option>
           <option>Creative / Freelancer</option>
-          <option>Agency owner</option>
+          <option>Women-led team</option>
+          <option>Admin / Operations support</option>
           <option>Other</option>
         </select>
       </div>
-      <div class="form-group">
+      <div class="audit-form-group">
         <label>What are you working through?</label>
         <textarea placeholder="Tell us where you are in your business journey — what's working, what's not, and what you'd love to change…"></textarea>
       </div>
-      <div class="form-submit">
-        <button type="submit" class="btn-submit">Send My Message ✦</button>
-      </div>
+      <button type="submit" class="audit-form-submit">Send My Message ✦</button>
     </form>
 
-    <div class="contact-alts">
+    <div class="contact-alts" style="margin-top:1.5rem; justify-content:center;">
       <a href="mailto:hello@badsystems.co" class="contact-alt">📧 hello@badsystems.co</a>
-      <a href="#" class="contact-alt">📱 Instagram</a>
-      <a href="#" class="contact-alt">💼 LinkedIn</a>
     </div>
   </div>
-</section>
+</div>
 
 <!-- ═══ FOOTER ═══ -->
 <footer>
@@ -855,25 +1186,23 @@ footer { background: var(--black); border-top: 1px solid var(--border); padding:
         <div class="logo-bolt" style="width:20px;height:20px;"></div>
         <span class="lime">BAD</span><span class="pink">&nbsp;Systems</span>
       </div>
-      <p>A human-first systems methodology helping service-based entrepreneurs design scalable businesses without sacrificing their lives.</p>
+      <p>Consulting and mentorship for service-based entrepreneurs and women-led teams. Done with you, not for you.</p>
     </div>
     <div class="footer-nav">
       <div class="footer-col">
         <h4>Explore</h4>
         <ul>
-          <li><a href="#methodology">Methodology</a></li>
-          <li><a href="#systems">5 Systems</a></li>
-          <li><a href="#philosophy">Philosophy</a></li>
+          <li><a href="about.html">About Jasmine</a></li>
           <li><a href="#audit">The Audit</a></li>
+          <li><a href="#methodology">Methodology</a></li>
+          <li><a href="#philosophy">Philosophy</a></li>
         </ul>
       </div>
       <div class="footer-col">
-        <h4>Connect</h4>
+        <h4>Work Together</h4>
         <ul>
-          <li><a href="#insights">Insights</a></li>
-          <li><a href="#contact">Work With Us</a></li>
-          <li><a href="#contact">Join Waitlist</a></li>
-          <li><a href="#">Community</a></li>
+          <li><a href="#" onclick="openContactForm(); return false;">Get In Touch</a></li>
+          <li><a href="#audit-signup">Join The Audit</a></li>
         </ul>
       </div>
     </div>
@@ -893,23 +1222,105 @@ function toggleNav() {
   document.getElementById('mobileNav').classList.toggle('open');
 }
 
-const systems = [
-  { icon:'📈', title:'Business Development', desc:"Your business development system is the engine of intentional growth. It connects your vision to your market — turning strategic thinking into pipeline, partnerships, and opportunities that align with your values and lifestyle goals.", tags:['Strategy','Partnerships','Offers','Revenue Design'] },
-  { icon:'🎯', title:'Acquisition System', desc:"Stop hoping for referrals. Your acquisition system is a repeatable, intentional process for attracting the right clients — through content, community, and conversation that feels authentic, not salesy.", tags:['Lead Generation','Content Strategy','Sales Process','Client Attraction'] },
-  { icon:'📦', title:'Fulfillment System', desc:"Delivering great work consistently — without reinventing the wheel every time — is what separates scalable businesses from burnt-out ones. Your fulfillment system makes excellence repeatable.", tags:['Delivery Workflows','Client Experience','Quality Control','SOPs'] },
-  { icon:'🤝', title:'Culture System', desc:"Whether you have a team of 2 or 20, culture is a system. How you communicate, make decisions, and hold standards defines whether your business attracts and retains great people — or exhausts them.", tags:['Team Design','Values & Norms','Communication','Hiring'] },
-  { icon:'💰', title:'Finance System', desc:"Financial clarity is freedom. Your finance system gives you real-time visibility into your numbers, removes anxiety around revenue, and creates the structure to make confident, strategic decisions.", tags:['Cash Flow','Revenue Tracking','Forecasting','Pricing Strategy'] }
-];
+function openAuditForm() {
+  document.getElementById('auditModal').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
 
-function setSystem(i) {
-  document.querySelectorAll('.system-row').forEach((r,idx) => r.classList.toggle('active', idx === i));
-  const s = systems[i];
-  document.getElementById('sysDetail').innerHTML = `
-    <div class="detail-icon">${s.icon}</div>
-    <div class="detail-title">${s.title}</div>
-    <p class="detail-desc">${s.desc}</p>
-    <div class="detail-tags">${s.tags.map(t=>`<span class="detail-tag">${t}</span>`).join('')}</div>
-  `;
+function closeAuditFormDirect() {
+  document.getElementById('auditModal').classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+function closeAuditForm(e) {
+  if (e.target === document.getElementById('auditModal')) {
+    closeAuditFormDirect();
+  }
+}
+
+async function handleAuditSubmit(e) {
+  e.preventDefault();
+  const btn = e.target.querySelector('.audit-form-submit');
+  const form = e.target;
+
+  const firstName = form.querySelectorAll('input[type="text"]')[0]?.value.trim() || '';
+  const lastName  = form.querySelectorAll('input[type="text"]')[1]?.value.trim() || '';
+  const email     = form.querySelector('input[type="email"]').value.trim();
+  const role      = form.querySelector('select').value;
+  const hopes     = form.querySelector('textarea').value.trim();
+  const fullName  = [firstName, lastName].filter(Boolean).join(' ');
+
+  btn.textContent = 'Submitting…';
+  btn.disabled = true;
+
+  // ── 1. POST to Notion ──────────────────────────────────────
+  const NOTION_TOKEN   = 'NOTION_API_KEY'; // ← replace with your integration token
+  const NOTION_DB_ID   = 'c3601914-1c7a-4a48-8808-f10ee14054c2';
+
+  const notionPayload = {
+    parent: { database_id: NOTION_DB_ID },
+    properties: {
+      Name:                    { title:  [{ text: { content: fullName } }] },
+      Email:                   { email:  email },
+      Role:                    { select: { name: role } },
+      'What they hope to get': { rich_text: [{ text: { content: hopes } }] },
+      Status:                  { select: { name: 'New' } }
+    }
+  };
+
+  // ── 2. POST to Zapier webhook (add your URL below) ─────────
+  const ZAPIER_URL = 'ZAPIER_WEBHOOK_URL'; // ← replace with your Zapier webhook
+
+  try {
+    await Promise.all([
+      fetch('https://api.notion.com/v1/pages', {
+        method: 'POST',
+        headers: {
+          'Authorization': `Bearer ${NOTION_TOKEN}`,
+          'Content-Type': 'application/json',
+          'Notion-Version': '2022-06-28'
+        },
+        body: JSON.stringify(notionPayload)
+      }),
+      ZAPIER_URL !== 'ZAPIER_WEBHOOK_URL' ? fetch(ZAPIER_URL, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ first_name: firstName, last_name: lastName, email, role, hopes, date: new Date().toLocaleString() })
+      }) : Promise.resolve()
+    ]);
+  } catch(err) {
+    console.warn('Submission error:', err);
+  }
+
+  btn.textContent = "✓ You're on the list!";
+  btn.style.background = 'var(--lime)';
+  btn.style.color = 'var(--black)';
+  setTimeout(() => closeAuditFormDirect(), 2200);
+}
+
+function openContactForm() {
+  document.getElementById('contactModal').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeContactFormDirect() {
+  document.getElementById('contactModal').classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+function closeContactForm(e) {
+  if (e.target === document.getElementById('contactModal')) {
+    closeContactFormDirect();
+  }
+}
+
+function handleContactSubmit(e) {
+  e.preventDefault();
+  const btn = e.target.querySelector('.audit-form-submit');
+  btn.textContent = '✓ Message Received!';
+  btn.style.background = 'var(--lime)';
+  btn.style.color = 'var(--black)';
+  setTimeout(() => closeContactFormDirect(), 2200);
 }
 
 function handleSubmit(e) {
@@ -923,10 +1334,12 @@ function handleSubmit(e) {
 
 window.addEventListener('scroll', () => {
   const nav = document.getElementById('mainNav');
+  const isMobile = window.innerWidth <= 920;
   nav.style.padding = window.scrollY > 50
-    ? (window.innerWidth > 920 ? '0.75rem 4rem' : '0.75rem 1.5rem')
-    : (window.innerWidth > 920 ? '1.2rem 4rem' : '1rem 1.5rem');
+    ? (isMobile ? '0.75rem 1.5rem' : '0.75rem 4rem')
+    : (isMobile ? '1rem 1.5rem'   : '1.2rem 4rem');
 });
 </script>
+
 </body>
 </html>
