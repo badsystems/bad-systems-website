@@ -684,6 +684,8 @@ footer { background: var(--black); border-top: 1px solid var(--border); padding:
 .about-body strong { font-style: normal; color: var(--white); }
 .italic-close { color: rgba(245,245,240,0.5) !important; }
 
+.audit-fillout-wrap { width: 100%; min-height: 500px; }
+
 /* ── RESPONSIVE ── */
 @media (max-width: 920px) {
   /* Nav */
@@ -1010,39 +1012,10 @@ footer { background: var(--black); border-top: 1px solid var(--border); padding:
       <div class="audit-signup-left">
         <p class="audit-one-sentence">The Audit is a guided, human-first reset — powered by BAD Systems methodology — where ambitious women <strong>review alignment, refine systems, and protect their humanity</strong>, together.</p>
       </div>
-      <form class="audit-inline-form" onsubmit="handleAuditSubmit(event)">
-        <div class="audit-form-row">
-          <div class="audit-form-group">
-            <label>First Name</label>
-            <input type="text" placeholder="Your first name" required>
-          </div>
-          <div class="audit-form-group">
-            <label>Last Name</label>
-            <input type="text" placeholder="Your last name">
-          </div>
-        </div>
-        <div class="audit-form-group">
-          <label>Email Address</label>
-          <input type="email" placeholder="you@yourbusiness.com" required>
-        </div>
-        <div class="audit-form-group">
-          <label>What best describes you?</label>
-          <select required>
-            <option value="" disabled selected>Select your role…</option>
-            <option>Solopreneur</option>
-            <option>Founder / CEO</option>
-            <option>Creative / Freelancer</option>
-            <option>Women-led team</option>
-            <option>Admin / Operations support</option>
-            <option>Other</option>
-          </select>
-        </div>
-        <div class="audit-form-group">
-          <label>What are you hoping The Audit gives you?</label>
-          <textarea placeholder="Share as little or as much as you'd like — what would feel like relief right now?"></textarea>
-        </div>
-        <button type="submit" class="audit-form-submit">Reserve My Spot ✦</button>
-      </form>
+      <div class="audit-fillout-wrap">
+        <div style="width:100%;height:500px;" data-fillout-id="emSyFZrCBmus" data-fillout-embed-type="standard" data-fillout-inherit-parameters data-fillout-dynamic-resize></div>
+        <script src="https://server.fillout.com/embed/v1/"></script>
+      </div>
     </div>
   </div>
 
