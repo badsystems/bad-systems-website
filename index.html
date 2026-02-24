@@ -1238,6 +1238,8 @@ function closeAuditForm(e) {
   }
 }
 
+const ZAPIER_URL = 'https://hooks.zapier.com/hooks/catch/21789438/ucnv93x/';
+
 async function handleAuditSubmit(e) {
   e.preventDefault();
   const btn = e.target.querySelector('.audit-form-submit');
@@ -1248,46 +1250,24 @@ async function handleAuditSubmit(e) {
   const email     = form.querySelector('input[type="email"]').value.trim();
   const role      = form.querySelector('select').value;
   const hopes     = form.querySelector('textarea').value.trim();
-  const fullName  = [firstName, lastName].filter(Boolean).join(' ');
 
   btn.textContent = 'Submitting…';
   btn.disabled = true;
 
-  // ── 1. POST to Notion ──────────────────────────────────────
-  const NOTION_TOKEN   = 'NOTION_API_KEY'; // ← replace with your integration token
-  const NOTION_DB_ID   = 'c3601914-1c7a-4a48-8808-f10ee14054c2';
-
-  const notionPayload = {
-    parent: { database_id: NOTION_DB_ID },
-    properties: {
-      Name:                    { title:  [{ text: { content: fullName } }] },
-      Email:                   { email:  email },
-      Role:                    { select: { name: role } },
-      'What they hope to get': { rich_text: [{ text: { content: hopes } }] },
-      Status:                  { select: { name: 'New' } }
-    }
-  };
-
-  // ── 2. POST to Zapier webhook (add your URL below) ─────────
-  const ZAPIER_URL = 'ZAPIER_WEBHOOK_URL'; // ← replace with your Zapier webhook
-
   try {
-    await Promise.all([
-      fetch('https://api.notion.com/v1/pages', {
-        method: 'POST',
-        headers: {
-          'Authorization': `Bearer ${NOTION_TOKEN}`,
-          'Content-Type': 'application/json',
-          'Notion-Version': '2022-06-28'
-        },
-        body: JSON.stringify(notionPayload)
-      }),
-      ZAPIER_URL !== 'ZAPIER_WEBHOOK_URL' ? fetch(ZAPIER_URL, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ first_name: firstName, last_name: lastName, email, role, hopes, date: new Date().toLocaleString() })
-      }) : Promise.resolve()
-    ]);
+    await fetch(ZAPIER_URL, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        form_type: 'audit_signup',
+        first_name: firstName,
+        last_name:  lastName,
+        email,
+        role,
+        hopes,
+        date: new Date().toLocaleString()
+      })
+    });
   } catch(err) {
     console.warn('Submission error:', err);
   }
@@ -1295,32 +1275,45 @@ async function handleAuditSubmit(e) {
   btn.textContent = "✓ You're on the list!";
   btn.style.background = 'var(--lime)';
   btn.style.color = 'var(--black)';
-  setTimeout(() => closeAuditFormDirect(), 2200);
+  setTimeout(() => { btn.disabled = false; }, 2200);
 }
 
-function openContactForm() {
-  document.getElementById('contactModal').classList.add('open');
-  document.body.style.overflow = 'hidden';
-}
-
-function closeContactFormDirect() {
-  document.getElementById('contactModal').classList.remove('open');
-  document.body.style.overflow = '';
-}
-
-function closeContactForm(e) {
-  if (e.target === document.getElementById('contactModal')) {
-    closeContactFormDirect();
-  }
-}
-
-function handleContactSubmit(e) {
+async function handleContactSubmit(e) {
   e.preventDefault();
   const btn = e.target.querySelector('.audit-form-submit');
+  const form = e.target;
+
+  const firstName = form.querySelectorAll('input[type="text"]')[0]?.value.trim() || '';
+  const lastName  = form.querySelectorAll('input[type="text"]')[1]?.value.trim() || '';
+  const email     = form.querySelector('input[type="email"]').value.trim();
+  const role      = form.querySelector('select').value;
+  const message   = form.querySelector('textarea').value.trim();
+
+  btn.textContent = 'Sending…';
+  btn.disabled = true;
+
+  try {
+    await fetch(ZAPIER_URL, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        form_type: 'contact',
+        first_name: firstName,
+        last_name:  lastName,
+        email,
+        role,
+        message,
+        date: new Date().toLocaleString()
+      })
+    });
+  } catch(err) {
+    console.warn('Submission error:', err);
+  }
+
   btn.textContent = '✓ Message Received!';
   btn.style.background = 'var(--lime)';
   btn.style.color = 'var(--black)';
-  setTimeout(() => closeContactFormDirect(), 2200);
+  setTimeout(() => { closeContactFormDirect(); btn.disabled = false; }, 2200);
 }
 
 function handleSubmit(e) {

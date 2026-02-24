@@ -466,13 +466,28 @@ function closeContactFormDirect() {
 function closeContactForm(e) {
   if (e.target === document.getElementById('contactModal')) closeContactFormDirect();
 }
-function handleContactSubmit(e) {
+async function handleContactSubmit(e) {
   e.preventDefault();
   const btn = e.target.querySelector('.audit-form-submit');
+  const form = e.target;
+  const firstName = form.querySelectorAll('input[type="text"]')[0]?.value.trim() || '';
+  const lastName  = form.querySelectorAll('input[type="text"]')[1]?.value.trim() || '';
+  const email     = form.querySelector('input[type="email"]').value.trim();
+  const role      = form.querySelector('select').value;
+  const message   = form.querySelector('textarea').value.trim();
+  btn.textContent = 'Sending…';
+  btn.disabled = true;
+  try {
+    await fetch('https://hooks.zapier.com/hooks/catch/21789438/ucnv93x/', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ form_type: 'contact', first_name: firstName, last_name: lastName, email, role, message, date: new Date().toLocaleString() })
+    });
+  } catch(err) { console.warn('Submission error:', err); }
   btn.textContent = '✓ Message Received!';
   btn.style.background = 'var(--lime)';
   btn.style.color = 'var(--black)';
-  setTimeout(() => closeContactFormDirect(), 2200);
+  setTimeout(() => { closeContactFormDirect(); btn.disabled = false; }, 2200);
 }
 window.addEventListener('scroll', () => {
   const nav = document.getElementById('mainNav');
