@@ -286,7 +286,7 @@ footer { background: var(--black); border-top: 1px solid var(--border); padding:
   <a href="about.html" onclick="toggleNav()" class="active">About</a>
   <a href="index.html#audit" onclick="toggleNav()">The Audit</a>
   <a href="index.html#methodology" onclick="toggleNav()">Methodology</a>
-  <a href="contact.html" onclick="toggleNav()">Get In Touch</a>
+  <a href="https://growwildagency.com/contact/" target="_blank" rel="noopener" onclick="toggleNav()">Get In Touch</a>
 </div>
 
 <!-- NAV -->
@@ -300,7 +300,7 @@ footer { background: var(--black); border-top: 1px solid var(--border); padding:
     <li><a href="about.html" class="active">About</a></li>
     <li><a href="index.html#audit">The Audit</a></li>
     <li><a href="index.html#methodology">Methodology</a></li>
-    <li><a href="contact.html" class="nav-btn">Get In Touch</a></li>
+    <li><a href="https://growwildagency.com/contact/" target="_blank" rel="noopener" class="nav-btn">Get In Touch</a></li>
   </ul>
   <div class="hamburger" onclick="toggleNav()">
     <span></span><span></span><span></span>
@@ -369,7 +369,7 @@ footer { background: var(--black); border-top: 1px solid var(--border); padding:
   <h2>Ready to build something <em>sustainable?</em></h2>
   <p>BAD Systems is methodology — done with you, not for you. It starts with a conversation.</p>
   <div class="cta-buttons">
-    <a href="#" onclick="openContactForm(); return false;" class="btn btn-lime">Get In Touch →</a>
+    <a href="https://growwildagency.com/contact/" target="_blank" rel="noopener" class="btn btn-lime">Get In Touch →</a>
     <a href="index.html#audit-signup" class="btn btn-outline">Join The Audit →</a>
   </div>
 </div>
@@ -397,7 +397,7 @@ footer { background: var(--black); border-top: 1px solid var(--border); padding:
       <div class="footer-col">
         <h4>Work Together</h4>
         <ul>
-          <li><a href="contact.html">Get In Touch</a></li>
+          <li><a href="https://growwildagency.com/contact/" target="_blank" rel="noopener">Get In Touch</a></li>
           <li><a href="index.html#audit-signup">Join The Audit</a></li>
         </ul>
       </div>
@@ -413,89 +413,9 @@ footer { background: var(--black); border-top: 1px solid var(--border); padding:
   </div>
 </footer>
 
-<!-- ═══ CONTACT MODAL ═══ -->
-<div class="audit-modal-overlay" id="contactModal" onclick="closeContactForm(event)">
-  <div class="audit-modal">
-    <button class="audit-modal-close" onclick="closeContactFormDirect()">✕</button>
-    <div class="audit-modal-badge">✦ Methodology</div>
-    <h3 class="audit-modal-title">Let's build this <span>together.</span></h3>
-    <p class="audit-modal-sub">BAD Systems starts with a real conversation. Tell us where you are, and we'll figure out if we're the right fit.</p>
-    <form class="audit-modal-form" onsubmit="handleContactSubmit(event)">
-      <div class="audit-form-row">
-        <div class="audit-form-group">
-          <label>First Name</label>
-          <input type="text" placeholder="Your first name" required>
-        </div>
-        <div class="audit-form-group">
-          <label>Last Name</label>
-          <input type="text" placeholder="Your last name">
-        </div>
-      </div>
-      <div class="audit-form-group">
-        <label>Email Address</label>
-        <input type="email" placeholder="you@yourbusiness.com" required>
-      </div>
-      <div class="audit-form-group">
-        <label>What best describes you?</label>
-        <select required>
-          <option value="" disabled selected>Select your role…</option>
-          <option>Solopreneur</option>
-          <option>Founder / CEO</option>
-          <option>Creative / Freelancer</option>
-          <option>Women-led team</option>
-          <option>Admin / Operations support</option>
-          <option>Other</option>
-        </select>
-      </div>
-      <div class="audit-form-group">
-        <label>What are you working through?</label>
-        <textarea placeholder="Tell us where you are — what's working, what's not, and what you'd love to change…"></textarea>
-      </div>
-      <button type="submit" class="audit-form-submit">Send My Message ✦</button>
-    </form>
-    <div class="contact-alts" style="margin-top:1.5rem;">
-      <a href="mailto:hello@badsystems.co" class="contact-alt">📧 hello@badsystems.co</a>
-    </div>
-  </div>
-</div>
-
 <script>
 function toggleNav() {
   document.getElementById('mobileNav').classList.toggle('open');
-}
-function openContactForm() {
-  document.getElementById('contactModal').classList.add('open');
-  document.body.style.overflow = 'hidden';
-}
-function closeContactFormDirect() {
-  document.getElementById('contactModal').classList.remove('open');
-  document.body.style.overflow = '';
-}
-function closeContactForm(e) {
-  if (e.target === document.getElementById('contactModal')) closeContactFormDirect();
-}
-async function handleContactSubmit(e) {
-  e.preventDefault();
-  const btn = e.target.querySelector('.audit-form-submit');
-  const form = e.target;
-  const firstName = form.querySelectorAll('input[type="text"]')[0]?.value.trim() || '';
-  const lastName  = form.querySelectorAll('input[type="text"]')[1]?.value.trim() || '';
-  const email     = form.querySelector('input[type="email"]').value.trim();
-  const role      = form.querySelector('select').value;
-  const message   = form.querySelector('textarea').value.trim();
-  btn.textContent = 'Sending…';
-  btn.disabled = true;
-  try {
-    await fetch('https://hooks.zapier.com/hooks/catch/21789438/ucnv93x/', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ form_type: 'contact', first_name: firstName, last_name: lastName, email, role, message, date: new Date().toLocaleString() })
-    });
-  } catch(err) { console.warn('Submission error:', err); }
-  btn.textContent = '✓ Message Received!';
-  btn.style.background = 'var(--lime)';
-  btn.style.color = 'var(--black)';
-  setTimeout(() => { closeContactFormDirect(); btn.disabled = false; }, 2200);
 }
 window.addEventListener('scroll', () => {
   const nav = document.getElementById('mainNav');
