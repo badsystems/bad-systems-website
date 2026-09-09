@@ -892,7 +892,7 @@ footer { background: var(--black); border-top: 1px solid var(--border); padding:
     </p>
 
     <div class="hero-actions">
-      <a href="#audit-hero-top" class="btn btn-lime">Explore The Audit →</a>
+      <a href="https://jointheaudit.com" target="_blank" rel="noopener" class="btn btn-lime">Explore The Audit →</a>
       <a href="#methodology" class="btn btn-outline">The BAD Methodology →</a>
     </div>
 
@@ -943,7 +943,7 @@ footer { background: var(--black); border-top: 1px solid var(--border); padding:
       <p class="audit-hero-desc">A structured pause for ambitious women who are building full lives — businesses, relationships, responsibilities — and don't want success to cost them their wholeness, humanity, softness, self, or peace.</p>
       <p class="audit-hero-desc">It's not about tearing everything down. It's about stepping back with intention. Supported by BAD Systems methodology — <em>Build. Automate. Delegate.</em> — The Audit creates space to evaluate what's working, what feels misaligned, and what needs to be redesigned — before burnout makes the decision for you.</p>
       <p class="audit-belief-line">Because the goal was never just a scalable business.<br><strong>It was a life your business supports.</strong></p>
-      <a href="#audit-signup" class="btn btn-lime" style="margin-top:1.5rem;">Join The Audit →</a>
+      <a href="https://jointheaudit.com" target="_blank" rel="noopener" class="btn btn-lime" style="margin-top:1.5rem;">Join The Audit →</a>
     </div>
   </div>
 
@@ -1013,9 +1013,8 @@ footer { background: var(--black); border-top: 1px solid var(--border); padding:
       <div class="audit-signup-left">
         <p class="audit-one-sentence">The Audit is a guided, human-first reset — powered by BAD Systems methodology — where ambitious women <strong>review alignment, refine systems, and protect their humanity</strong>, together.</p>
       </div>
-      <div class="audit-fillout-wrap">
-        <div style="width:100%;height:500px;" data-fillout-id="emSyFZrCBmus" data-fillout-embed-type="standard" data-fillout-inherit-parameters data-fillout-dynamic-resize></div>
-        <script src="https://server.fillout.com/embed/v1/"></script>
+      <div class="audit-fillout-wrap" style="display:flex;align-items:center;justify-content:center;">
+        <a href="https://jointheaudit.com" target="_blank" rel="noopener" class="btn btn-lime" style="font-size:1rem;padding:1.1rem 2.5rem;">Join The Audit →</a>
       </div>
     </div>
   </div>
@@ -1128,7 +1127,7 @@ footer { background: var(--black); border-top: 1px solid var(--border); padding:
         <h4>Work Together</h4>
         <ul>
           <li><a href="https://growwildagency.com/contact/" target="_blank" rel="noopener">Get In Touch</a></li>
-          <li><a href="#audit-signup">Join The Audit</a></li>
+          <li><a href="https://jointheaudit.com" target="_blank" rel="noopener">Join The Audit</a></li>
         </ul>
       </div>
     </div>
@@ -1146,62 +1145,6 @@ footer { background: var(--black); border-top: 1px solid var(--border); padding:
 <script>
 function toggleNav() {
   document.getElementById('mobileNav').classList.toggle('open');
-}
-
-function openAuditForm() {
-  document.getElementById('auditModal').classList.add('open');
-  document.body.style.overflow = 'hidden';
-}
-
-function closeAuditFormDirect() {
-  document.getElementById('auditModal').classList.remove('open');
-  document.body.style.overflow = '';
-}
-
-function closeAuditForm(e) {
-  if (e.target === document.getElementById('auditModal')) {
-    closeAuditFormDirect();
-  }
-}
-
-const ZAPIER_URL = 'https://hooks.zapier.com/hooks/catch/21789438/ucnv93x/';
-
-async function handleAuditSubmit(e) {
-  e.preventDefault();
-  const btn = e.target.querySelector('.audit-form-submit');
-  const form = e.target;
-
-  const firstName = form.querySelectorAll('input[type="text"]')[0]?.value.trim() || '';
-  const lastName  = form.querySelectorAll('input[type="text"]')[1]?.value.trim() || '';
-  const email     = form.querySelector('input[type="email"]').value.trim();
-  const role      = form.querySelector('select').value;
-  const hopes     = form.querySelector('textarea').value.trim();
-
-  btn.textContent = 'Submitting…';
-  btn.disabled = true;
-
-  try {
-    await fetch(ZAPIER_URL, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        form_type: 'audit_signup',
-        first_name: firstName,
-        last_name:  lastName,
-        email,
-        role,
-        hopes,
-        date: new Date().toLocaleString()
-      })
-    });
-  } catch(err) {
-    console.warn('Submission error:', err);
-  }
-
-  btn.textContent = "✓ You're on the list!";
-  btn.style.background = 'var(--lime)';
-  btn.style.color = 'var(--black)';
-  setTimeout(() => { btn.disabled = false; }, 2200);
 }
 
 function handleSubmit(e) {
